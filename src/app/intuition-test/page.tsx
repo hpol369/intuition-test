@@ -1,16 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import IntuitionTest from '@/components/IntuitionTest';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Intuition Test - How Accurate Is Your Gut Feeling?',
   description: 'Take this free 2-minute test to discover where your intuition is accurate and where it systematically misleads you. 7 questions, instant results.',
+  keywords: ['intuition test', 'gut feeling test', 'intuition accuracy', 'cognitive bias test'],
   alternates: {
     canonical: '/intuition-test'
   },
   openGraph: {
     title: 'Intuition Test - How Accurate Is Your Gut Feeling?',
-    description: 'Take this free 2-minute test to discover where your intuition works and where it fails.',
+    description: 'Free 2-minute test to discover where your gut feeling helps and where it misleads you.',
+    url: 'https://decisionlab.app/intuition-test',
     type: 'website'
   }
 };
@@ -18,6 +21,22 @@ export const metadata: Metadata = {
 export default function IntuitionTestPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Intuition Test",
+          "description": "Free interactive test to discover how accurate your gut feeling really is",
+          "url": "https://decisionlab.app/intuition-test",
+          "applicationCategory": "Self-Assessment Tool",
+          "operatingSystem": "Any",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }}
+      />
       <IntuitionTest />
 
       {/* SEO Content Below Tool */}

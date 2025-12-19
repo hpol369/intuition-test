@@ -1,16 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ScenarioPlanner from '@/components/planner/ScenarioPlanner';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Scenario Planner - Think Through Your Decision',
-  description: "Explore best, likely, and worst case scenarios for any important decision. Free tool to find clarity when intuition alone isn't enough.",
+  description: "Free tool to structure any decision using best, likely, and worst case scenarios. Get AI-powered insights in 3 minutes.",
+  keywords: ['scenario planning', 'decision tool', 'best case worst case', 'decision making'],
   alternates: {
     canonical: '/scenario-planner'
   },
   openGraph: {
     title: 'Scenario Planner - Think Through Your Decision',
-    description: 'Explore best, likely, and worst case scenarios for any important decision.',
+    description: 'Structure any decision with best, likely, and worst case scenarios.',
+    url: 'https://decisionlab.app/scenario-planner',
     type: 'website'
   }
 };
@@ -18,6 +21,22 @@ export const metadata: Metadata = {
 export default function ScenarioPlannerPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Scenario Planner",
+          "description": "Free tool to structure decisions using best, likely, and worst case scenarios",
+          "url": "https://decisionlab.app/scenario-planner",
+          "applicationCategory": "Decision Support Tool",
+          "operatingSystem": "Any",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }}
+      />
       <ScenarioPlanner />
 
       {/* SEO Content Below Tool */}

@@ -14,6 +14,7 @@ export default function WhenToTrustYourGut() {
       description="A practical guide to knowing when intuition is reliable and when to override it."
       ctaText="Test Your Intuition"
       ctaHref="/intuition-test"
+      slug="when-to-trust-your-gut"
       relatedLinks={[
         { title: 'Why Intuition Fails', href: '/learn/why-intuition-fails' },
         { title: 'Scenario Analysis', href: '/learn/best-case-worst-case-analysis' },

@@ -14,6 +14,7 @@ export default function BestCaseWorstCaseAnalysis() {
       description="A simple framework for thinking through decisions using scenario planning."
       ctaText="Try the Scenario Planner"
       ctaHref="/scenario-planner"
+      slug="best-case-worst-case-analysis"
       relatedLinks={[
         { title: 'Decision-Making Under Uncertainty', href: '/learn/decision-making-under-uncertainty' },
         { title: 'When to Trust Your Gut', href: '/learn/when-to-trust-your-gut' },

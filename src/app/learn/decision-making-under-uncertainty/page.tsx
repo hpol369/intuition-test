@@ -14,6 +14,7 @@ export default function DecisionMakingUnderUncertainty() {
       description="How to choose wisely when outcomes are unpredictable and certainty is impossible."
       ctaText="Start with the Intuition Test"
       ctaHref="/intuition-test"
+      slug="decision-making-under-uncertainty"
       relatedLinks={[
         { title: 'Why Intuition Fails', href: '/learn/why-intuition-fails' },
         { title: 'Scenario Analysis', href: '/learn/best-case-worst-case-analysis' },

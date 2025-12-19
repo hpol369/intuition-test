@@ -1,9 +1,24 @@
 import Link from 'next/link';
 import { ToolCard } from '@/components/home/ToolCard';
+import { JsonLd } from '@/components/JsonLd';
 
 export default function Home() {
   return (
     <main className="bg-[#fafafa]">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "DecisionLab",
+          "url": "https://decisionlab.app",
+          "description": "Free tools to help you make better decisions under uncertainty",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://decisionlab.app/learn?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">

@@ -14,6 +14,7 @@ export default function WhyIntuitionFails() {
       description="The science behind gut feeling errors and when your instincts mislead you."
       ctaText="Test Your Intuition"
       ctaHref="/intuition-test"
+      slug="why-intuition-fails"
       relatedLinks={[
         { title: 'When to Trust Your Gut', href: '/learn/when-to-trust-your-gut' },
         { title: 'Decision-Making Under Uncertainty', href: '/learn/decision-making-under-uncertainty' },

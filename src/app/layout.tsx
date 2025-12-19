@@ -7,7 +7,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://decisionlab.vercel.app'),
+  metadataBase: new URL('https://decisionlab.app'),
   title: {
     default: 'DecisionLab - Think Clearly Under Uncertainty',
     template: '%s | DecisionLab'
@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   keywords: ['decision making', 'intuition test', 'scenario planning', 'cognitive biases', 'decision tools'],
   authors: [{ name: 'DecisionLab' }],
   creator: 'DecisionLab',
+  publisher: 'DecisionLab',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://decisionlab.vercel.app',
+    url: 'https://decisionlab.app',
     siteName: 'DecisionLab',
     title: 'DecisionLab - Think Clearly Under Uncertainty',
     description: 'Free tools to help you make better decisions when certainty is not possible.',
@@ -28,7 +34,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'DecisionLab'
+        alt: 'DecisionLab - Decision Making Tools'
       }
     ]
   },
@@ -40,7 +46,14 @@ export const metadata: Metadata = {
   },
   robots: {
     index: true,
-    follow: true
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   }
 };
 

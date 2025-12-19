@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { JsonLd } from '@/components/JsonLd';
 
 interface ArticleLayoutProps {
   children: React.ReactNode;
@@ -6,6 +7,7 @@ interface ArticleLayoutProps {
   description: string;
   ctaText: string;
   ctaHref: string;
+  slug: string;
   relatedLinks?: { title: string; href: string }[];
 }
 
@@ -15,10 +17,34 @@ export function ArticleLayout({
   description,
   ctaText,
   ctaHref,
+  slug,
   relatedLinks = []
 }: ArticleLayoutProps) {
   return (
     <main className="bg-[#fafafa] py-12 px-6">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": title,
+          "description": description,
+          "author": {
+            "@type": "Organization",
+            "name": "DecisionLab"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "DecisionLab",
+            "url": "https://decisionlab.app"
+          },
+          "datePublished": "2024-12-19",
+          "dateModified": "2024-12-19",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://decisionlab.app/learn/${slug}`
+          }
+        }}
+      />
       <article className="max-w-2xl mx-auto">
         {/* Header */}
         <header className="mb-10">
