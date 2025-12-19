@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { TestResult } from '@/lib/types';
 import { ScoreCircle } from './ScoreCircle';
 import { BiasBreakdown } from './BiasBreakdown';
@@ -106,6 +107,22 @@ export function ResultScreen({ result, onRetake }: ResultScreenProps) {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scenario Planner CTA */}
+      <div className="mt-8 bg-zinc-900 rounded-xl p-6 text-center">
+        <p className="text-sm text-zinc-300 mb-4">
+          When intuition isn&apos;t enough, use structured thinking.
+        </p>
+        <Link
+          href="/scenario-planner"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-zinc-900 text-sm font-medium rounded-lg hover:bg-zinc-100 active:scale-[0.98] transition-all"
+        >
+          Try Scenario Planner
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
       </div>
     </div>
   );
