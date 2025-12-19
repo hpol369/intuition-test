@@ -42,10 +42,10 @@ export function QuestionScreen({
   const isCorrect = selectedIndex !== null && selectedIndex === question.correctIndex;
 
   return (
-    <div className="max-w-lg mx-auto">
+    <div className="max-w-md mx-auto">
       <ProgressBar current={questionNumber} total={totalQuestions} />
 
-      <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-6">
+      <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-zinc-900 mb-6 leading-tight">
         {question.question}
       </h2>
 

@@ -53,7 +53,7 @@ export default function IntuitionTest() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8 px-4">
+    <main className="min-h-screen bg-[#fafafa] py-12 px-6">
       <div className="max-w-2xl mx-auto">
         {phase === 'intro' && (
           <IntroScreen onStart={handleStart} />

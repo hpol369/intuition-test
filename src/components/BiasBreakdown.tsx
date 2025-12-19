@@ -7,35 +7,51 @@ interface BiasBreakdownProps {
 }
 
 export function BiasBreakdown({ strongAreas, weakAreas }: BiasBreakdownProps) {
+  if (strongAreas.length === 0 && weakAreas.length === 0) {
+    return null;
+  }
+
   return (
-    <div className="grid md:grid-cols-2 gap-4 mt-6">
+    <div className="grid gap-3 mt-8">
       {strongAreas.length > 0 && (
-        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-          <h3 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
-            <span>✓</span> Strong Areas
-          </h3>
-          <ul className="space-y-1">
+        <div className="bg-white border border-zinc-200 rounded-xl p-4">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+              <span className="text-emerald-600 text-xs">✓</span>
+            </div>
+            <h3 className="text-sm font-medium text-zinc-900">Strong Areas</h3>
+          </div>
+          <div className="flex flex-wrap gap-2">
             {strongAreas.map(bias => (
-              <li key={bias} className="text-green-700 text-sm">
+              <span
+                key={bias}
+                className="inline-flex px-2.5 py-1 text-xs font-medium text-emerald-700 bg-emerald-50 rounded-md"
+              >
                 {getBiasDisplayName(bias)}
-              </li>
+              </span>
             ))}
-          </ul>
+          </div>
         </div>
       )}
 
       {weakAreas.length > 0 && (
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
-          <h3 className="font-semibold text-amber-800 mb-2 flex items-center gap-2">
-            <span>⚠</span> Watch Out For
-          </h3>
-          <ul className="space-y-1">
+        <div className="bg-white border border-zinc-200 rounded-xl p-4">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+              <span className="text-amber-600 text-xs">!</span>
+            </div>
+            <h3 className="text-sm font-medium text-zinc-900">Watch Out For</h3>
+          </div>
+          <div className="flex flex-wrap gap-2">
             {weakAreas.map(bias => (
-              <li key={bias} className="text-amber-700 text-sm">
+              <span
+                key={bias}
+                className="inline-flex px-2.5 py-1 text-xs font-medium text-amber-700 bg-amber-50 rounded-md"
+              >
                 {getBiasDisplayName(bias)}
-              </li>
+              </span>
             ))}
-          </ul>
+          </div>
         </div>
       )}
     </div>

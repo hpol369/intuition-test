@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { TestResult } from '@/lib/types';
 import { ScoreCircle } from './ScoreCircle';
 import { BiasBreakdown } from './BiasBreakdown';
@@ -10,6 +11,7 @@ interface ResultScreenProps {
 }
 
 export function ResultScreen({ result, onRetake }: ResultScreenProps) {
+  const [copied, setCopied] = useState(false);
   const shareText = `I scored ${result.score}/${result.maxScore} on the Intuition Test! My gut feeling is: ${result.label}. Take the test:`;
 
   const handleShare = async () => {
@@ -26,64 +28,83 @@ export function ResultScreen({ result, onRetake }: ResultScreenProps) {
         // User cancelled or error
       }
     } else {
-      // Fallback: copy to clipboard
       navigator.clipboard.writeText(`${shareText} ${url}`);
-      alert('Link copied to clipboard!');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
   };
 
   return (
-    <div className="max-w-lg mx-auto text-center">
-      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-        Your Results
-      </h1>
-      <p className="text-gray-500 mb-8">Here&apos;s what we learned about your intuition</p>
-
-      <ScoreCircle score={result.score} maxScore={result.maxScore} />
-
-      <div className="mt-6 mb-8">
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">
-          {result.label}
-        </h2>
-        <p className="text-gray-600">
-          {result.description}
-        </p>
+    <div className="max-w-md mx-auto">
+      {/* Header */}
+      <div className="text-center mb-8">
+        <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-zinc-600 bg-white border border-zinc-200 rounded-full mb-6">
+          Test Complete
+        </span>
+        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900">
+          Your Results
+        </h1>
       </div>
 
+      {/* Score */}
+      <div className="bg-white border border-zinc-200 rounded-2xl p-8 mb-6 shadow-sm">
+        <ScoreCircle score={result.score} maxScore={result.maxScore} />
+
+        <div className="mt-6 text-center">
+          <h2 className="text-lg font-semibold text-zinc-900 mb-2">
+            {result.label}
+          </h2>
+          <p className="text-sm text-zinc-500 leading-relaxed">
+            {result.description}
+          </p>
+        </div>
+      </div>
+
+      {/* Bias breakdown */}
       <BiasBreakdown
         strongAreas={result.strongAreas}
         weakAreas={result.weakAreas}
       />
 
+      {/* Actions */}
       <div className="mt-8 space-y-3">
         <button
           onClick={handleShare}
-          className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors"
+          className="w-full h-12 bg-zinc-900 text-white text-sm font-medium rounded-lg hover:bg-zinc-800 active:scale-[0.98] transition-all"
         >
-          Share Your Result
+          {copied ? 'Copied to clipboard!' : 'Share your result'}
         </button>
 
         <button
           onClick={onRetake}
-          className="w-full py-3 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition-colors"
+          className="w-full h-12 bg-white text-zinc-700 text-sm font-medium rounded-lg border border-zinc-200 hover:bg-zinc-50 active:scale-[0.98] transition-all"
         >
-          Take the Test Again
+          Take the test again
         </button>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-gray-200">
-        <h3 className="font-semibold text-gray-900 mb-4">Want to improve your intuition?</h3>
-        <div className="text-left space-y-3 text-sm text-gray-600">
-          <p>
-            <strong>When to trust your gut:</strong> In areas where you have deep experience,
-            pattern recognition serves you well. Experts can make accurate snap judgments
-            in their domain.
-          </p>
-          <p>
-            <strong>When to slow down:</strong> For statistics, probabilities, and risks -
-            especially rare events - your intuition will systematically mislead you.
-            Take time to check the numbers.
-          </p>
+      {/* Tips */}
+      <div className="mt-10 pt-8 border-t border-zinc-200">
+        <h3 className="text-sm font-medium text-zinc-900 mb-4">Improve your intuition</h3>
+        <div className="space-y-4">
+          <div className="flex gap-3">
+            <div className="w-5 h-5 rounded-full bg-zinc-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="text-xs text-zinc-600">1</span>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-zinc-700">Trust your gut in familiar areas</p>
+              <p className="text-xs text-zinc-500 mt-0.5">Experts make accurate snap judgments in their domain.</p>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className="w-5 h-5 rounded-full bg-zinc-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="text-xs text-zinc-600">2</span>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-zinc-700">Slow down for statistics</p>
+              <p className="text-xs text-zinc-500 mt-0.5">For probabilities and rare events, check the numbers.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
