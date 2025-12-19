@@ -10,11 +10,11 @@ export default function Home() {
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "DecisionLab",
-          "url": "https://decisionlab.app",
+          "url": "https://www.decisionlab.app",
           "description": "Free tools to help you make better decisions under uncertainty",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://decisionlab.app/learn?q={search_term_string}",
+            "target": "https://www.decisionlab.app/learn?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         }}

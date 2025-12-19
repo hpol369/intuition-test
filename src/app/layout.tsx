@@ -7,7 +7,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://decisionlab.app'),
+  metadataBase: new URL('https://www.decisionlab.app'),
   title: {
     default: 'DecisionLab - Think Clearly Under Uncertainty',
     template: '%s | DecisionLab'
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://decisionlab.app',
+    url: 'https://www.decisionlab.app',
     siteName: 'DecisionLab',
     title: 'DecisionLab - Think Clearly Under Uncertainty',
     description: 'Free tools to help you make better decisions when certainty is not possible.',

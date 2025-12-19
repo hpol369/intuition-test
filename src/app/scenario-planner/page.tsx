@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Scenario Planner - Think Through Your Decision',
     description: 'Structure any decision with best, likely, and worst case scenarios.',
-    url: 'https://decisionlab.app/scenario-planner',
+    url: 'https://www.decisionlab.app/scenario-planner',
     type: 'website'
   }
 };
@@ -27,7 +27,7 @@ export default function ScenarioPlannerPage() {
           "@type": "WebApplication",
           "name": "Scenario Planner",
           "description": "Free tool to structure decisions using best, likely, and worst case scenarios",
-          "url": "https://decisionlab.app/scenario-planner",
+          "url": "https://www.decisionlab.app/scenario-planner",
           "applicationCategory": "Decision Support Tool",
           "operatingSystem": "Any",
           "offers": {

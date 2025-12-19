@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArticleLayout } from '@/components/articles/ArticleLayout';
 
 export const metadata: Metadata = {
-  title: 'Decision-Making Under Uncertainty - How to Choose When You Can\'t Know',
+  title: 'Decision-Making Under Uncertainty',
   description: 'Most important decisions involve uncertainty. Learn frameworks and tools to make better choices when outcomes are unpredictable.',
 };
 

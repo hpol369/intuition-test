@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Intuition Test - How Accurate Is Your Gut Feeling?',
     description: 'Free 2-minute test to discover where your gut feeling helps and where it misleads you.',
-    url: 'https://decisionlab.app/intuition-test',
+    url: 'https://www.decisionlab.app/intuition-test',
     type: 'website'
   }
 };
@@ -27,7 +27,7 @@ export default function IntuitionTestPage() {
           "@type": "WebApplication",
           "name": "Intuition Test",
           "description": "Free interactive test to discover how accurate your gut feeling really is",
-          "url": "https://decisionlab.app/intuition-test",
+          "url": "https://www.decisionlab.app/intuition-test",
           "applicationCategory": "Self-Assessment Tool",
           "operatingSystem": "Any",
           "offers": {

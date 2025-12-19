@@ -35,13 +35,13 @@ export function ArticleLayout({
           "publisher": {
             "@type": "Organization",
             "name": "DecisionLab",
-            "url": "https://decisionlab.app"
+            "url": "https://www.decisionlab.app"
           },
           "datePublished": "2024-12-19",
           "dateModified": "2024-12-19",
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://decisionlab.app/learn/${slug}`
+            "@id": `https://www.decisionlab.app/learn/${slug}`
           }
         }}
       />

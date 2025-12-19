@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://decisionlab.app/sitemap.xml',
+    sitemap: 'https://www.decisionlab.app/sitemap.xml',
   };
 }

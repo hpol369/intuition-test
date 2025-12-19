@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArticleLayout } from '@/components/articles/ArticleLayout';
 
 export const metadata: Metadata = {
-  title: 'Best Case Worst Case Analysis - A Simple Decision Framework',
+  title: 'Best Case Worst Case Analysis',
   description: 'Learn how to use best case, most likely, and worst case scenarios to make better decisions. Free tool included.',
 };
 
