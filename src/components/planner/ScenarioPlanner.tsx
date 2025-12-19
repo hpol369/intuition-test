@@ -13,7 +13,7 @@ export default function ScenarioPlanner() {
   const [decision, setDecision] = useState('');
   const [bestCase, setBestCase] = useState<Scenario | null>(null);
   const [likelyCase, setLikelyCase] = useState<Scenario | null>(null);
-  const [worstCase, setWorstCase] = useState<Scenario | null>(null);
+  const [, setWorstCase] = useState<Scenario | null>(null);
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState<string | null>(null);
 

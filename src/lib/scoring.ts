@@ -1,4 +1,4 @@
-import { Question, UserAnswer, TestResult, BiasType } from './types';
+import { UserAnswer, TestResult, BiasType } from './types';
 import { questions } from '@/data/questions';
 
 export function calculateResult(answers: UserAnswer[]): TestResult {
